@@ -353,3 +353,222 @@ section {
         object-fit: cover;
     }
 }
+
+
+
+/* Contact Container Styles */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  /* background-color: #1c1c1c; */
+  border-radius: 12px;
+  max-width: 90%;
+  margin-top: 100px;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  background-color: #2a2a2a;
+  padding: 20px 60px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-info h3 {
+  margin: 10px 0;
+  color: #f5f5f5;
+}
+
+.contact-info a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #ff6347;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-bottom-color: #ff6347;
+}
+
+.form-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.form-group input:focus + label, 
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label, 
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #343434;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff6347;
+  transform: translateY(-2px);
+}
+
+/* Iframe Styles */
+.iframe-container {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .iframe-container iframe {
+      height: 300px;
+  }
+
+  .contact-info {
+      padding: 15px 40px;
+  }
+
+  .contact-form-container {
+      padding: 20px;
+      padding-top: 40px;
+      padding-right:40px;
+  }
+}
+
+
+
+/* GitHub Logo Styles */
+.github-logo {
+  
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.github-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.github-logo:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* Swipe Container */
+.swipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 150px;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  background-color: #1c1c1c;
+}
+
+/* Hand Pointer Image */
+.hand-pointer img {
+  width: 50px;
+  height: 50px;
+  animation: swipe-animation 1.5s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes swipe-animation {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Swipe Text */
+.swipe-container p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+
+.right-corner {
+  position: absolute;
+  right: -20px;
+  bottom: 10px
+}
+
+
