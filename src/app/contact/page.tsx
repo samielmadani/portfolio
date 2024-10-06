@@ -51,7 +51,7 @@ export default function Contact() {
           <BurgerMenu />
         </motion.div>
         <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4"
+            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4 mb-4"
             variants={itemVariants}
           >
             {[
