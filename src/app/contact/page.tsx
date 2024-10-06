@@ -50,6 +50,28 @@ export default function Contact() {
           <NavBar />
           <BurgerMenu />
         </motion.div>
+        <motion.div
+            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4"
+            variants={itemVariants}
+          >
+            {[
+              { Icon: Github, link: "https://github.com/samielmadani" },
+              { Icon: Linkedin, link: "https://linkedin.com/in/samielmadani" },
+              { Icon: Mail, link: "mailto:sami.elmadani@outlook.com" }
+            ].map(({ Icon, link }, index) => (
+              <motion.a
+                key={index}
+                href={link}
+                className="text-black"
+                variants={symbolVariants}
+                whileHover={{ scale: 1.2 }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={24} />
+              </motion.a>
+            ))}
+          </motion.div>
 
         <motion.div
           className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col mb-4"
@@ -76,28 +98,7 @@ export default function Contact() {
           </motion.form>
         </motion.div>
 
-        <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4"
-            variants={itemVariants}
-          >
-            {[
-              { Icon: Github, link: "https://github.com/samielmadani" },
-              { Icon: Linkedin, link: "https://linkedin.com/in/samielmadani" },
-              { Icon: Mail, link: "mailto:sami.elmadani@outlook.com" }
-            ].map(({ Icon, link }, index) => (
-              <motion.a
-                key={index}
-                href={link}
-                className="text-black"
-                variants={symbolVariants}
-                whileHover={{ scale: 1.2 }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon size={24} />
-              </motion.a>
-            ))}
-          </motion.div>
+        
       </motion.div>
     </div>
   )
