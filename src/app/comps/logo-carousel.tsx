@@ -49,7 +49,7 @@ const LogoCarousel: React.FC = () => {
       {/* <h2 style={{ textAlign: 'center' }}>My Tech Stack</h2> */}
 
       <a href="https://github.com/samielmadani?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <div className="scroller" data-direction="right" data-speed="slow">
+        <div className="scroller" data-direction="right" data-speed="fast">
           <div className="scroller__inner">
             <Image src={css} alt="Logo 1" width={50} height={50} />
             <Image src={git} alt="Logo 2" width={50} height={50} />

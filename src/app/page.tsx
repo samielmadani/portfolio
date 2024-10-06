@@ -9,14 +9,13 @@ import profilePic from './images/me.png'
 import LogoCarousel from './comps/logo-carousel'
 import { NavBar } from './comps/nav-bar'
 
+import gitGif from './images/git.gif'
+
 
 export default function Home() {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => setExpanded(true), 1000)
-    return () => clearTimeout(timer)
-  }, [])
+  
 
   const containerVariants = {
     initial: { gap: '0px', gridTemplateColumns: '1fr' },
@@ -64,7 +63,7 @@ export default function Home() {
         <motion.div
           className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
-          style={{ height: '100px' }}
+          style={{ height: '100px', zIndex: '999' }}
         >
           <NavBar />
           <BurgerMenu />
@@ -96,7 +95,7 @@ export default function Home() {
           >
             <motion.h1
               variants={textVariants}
-              className="text-2xl font-semibold text-black leading-10" // Added leading utility for line height
+              className="text-2xl font-semibold text-black leading-10 headerr" // Added leading utility for line height
               style={{ fontSize: '50px' }}
             >
               Sami Elmadani <br></br> Software Engineer
@@ -156,30 +155,40 @@ export default function Home() {
             className="bg-[#d7cfbb] rounded-lg p-6 flex flex-col justify-between"
             variants={itemVariants}
           >
-            
+
             <motion.div variants={imageVariants} className="flex-grow relative mb-2">
               <div className="relative" style={{ minHeight: '200px' }}> {/* Set minHeight here */}
-                <Image
-                  src="https://ariobe.irisceramicagroup.com/wp-content/uploads/arioimg_repo/classic/pietre-naturali-high-tech/_pavimenti/jatoba-brown/texture/ar-pn-jatoba_brown_pn-_-_-120120-f07-plp120689.jpg"
-                  alt="First Dance"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded"
-                />
+                <a href="https://github.com/samielmadani" target="_blank" rel="noopener noreferrer">
+
+                  <Image
+                    src={gitGif}
+                    alt="First Dance"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded"
+
+                  />
+                </a>
               </div>
             </motion.div>
 
-            <motion.div variants={textVariants} className="space-y-4">
-              {['Zonate', 'Muslim Open Space', 'UCMUSA', 'University'].map((item, index) => (
+
+            <motion.div variants={textVariants} className="space-y-4" >
+              {[
+                { name: 'Zonate', link: 'https://linkedin.com/in/samielmadani' },
+                { name: 'Muslim Open Space', link: 'https://www.facebook.com/muslimopenspace/' },
+                { name: 'UCMUSA', link: 'https://www.canterburymusa.com/' },
+                { name: 'University', link: 'https://github.com/samielmadani' },
+              ].map((item, index) => (
                 <div key={index}>
-                  <strong className="text-black">{item}</strong>
-                  <motion.div
-                    className="h-px bg-black mt-1"
-                    variants={dividerVariants}
-                  />
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <strong className="text-black titless">{item.name}</strong>
+                  </a>
+                  <motion.div className="h-px bg-black mt-1" variants={dividerVariants} />
                 </div>
               ))}
             </motion.div>
+
           </motion.div>
 
           <motion.div

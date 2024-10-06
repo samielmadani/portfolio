@@ -7,6 +7,15 @@ import { BurgerMenu } from '../comps/burger-menu'
 import { NavBar } from '../comps/nav-bar'
 import LogoCarousel from '../comps/logo-carousel'
 
+import ucmusaImage from '../images/ucmusa.png';
+
+import zonate from '../images/z1.png';
+import lensfolio from '../images/l1.png';
+import monop from '../images/m1.jpeg';
+import mos from '../images/os1.jpeg';
+
+
+
 export default function Projects() {
   const [expanded, setExpanded] = useState(false)
 
@@ -35,13 +44,18 @@ export default function Projects() {
   }
 
   const projects = [
-    { title: "UCMUSA Prayer App", height: "h-64" },
-    { title: "Muslim Open Space", height: "h-80" },
-    { title: "Zonate", height: "h-72" },
-    { title: "canterburymusa.com", height: "h-72" },
-    { title: "Lenfolio", height: "h-64" },
-    { title: "Mixed Reality Monopoly", height: "h-80" },
+    { title: "UCMUSA Prayer App", height: "h-64", imageSrc: "https://drive.google.com/file/d/11y-p-XO4qMNbhUd6-AejVHe6YBNOzztl/preview", isIframe: true },
+    { title: "Muslim Open Space", height: "h-80", imageSrc: mos },
+    { title: "Zonate", height: "h-72", imageSrc: zonate  },
+    { title: "canterburymusa.com", height: "h-72", imageSrc: ucmusaImage  },
+    { title: "Lensfolio", height: "h-64", imageSrc: lensfolio  },
+    { title: "Mixed Reality Monopoly", height: "h-80", imageSrc: monop  },
+
   ]
+
+  const handleProjectClick = () => {
+    window.open('https://github.com/samielmadani?tab=repositories', '_blank'); // Opens google.com in a new tab
+  }
 
   return (
     <div className="bg-black min-h-screen flex flex-col">
@@ -55,17 +69,19 @@ export default function Projects() {
         <motion.div
           className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
-          style={{ height: '100px' }} // Fixed height for the header
+          style={{ height: '100px', zIndex: '999' }} // Fixed height for the header
         >
           <NavBar />
           <BurgerMenu />
         </motion.div>
 
+        
+
         <motion.div
           className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col"
           variants={itemVariants}
         >
-          <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-6 text-black font-poppins">
+          <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-6 text-black font-poppins headerr">
             My Projects
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -75,21 +91,32 @@ export default function Projects() {
                   key={index}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
+                  onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
-                    <Image
-                      src="https://ariobe.irisceramicagroup.com/wp-content/uploads/arioimg_repo/classic/pietre-naturali-high-tech/_pavimenti/jatoba-brown/texture/ar-pn-jatoba_brown_pn-_-_-120120-f07-plp120689.jpg"
-                      alt={project.title}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                    />
+                    {project.isIframe ? (
+                      <iframe
+                        src={project.imageSrc}
+                        width="100%"
+                        height="100%"
+                        allow="autoplay"
+                        className="w-full h-full"
+                      ></iframe>
+                    ) : (
+                      <Image
+                        src={project.imageSrc}
+                        alt={project.title}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </motion.div>
                   <motion.div
                     variants={textVariants}
                     className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -100,10 +127,11 @@ export default function Projects() {
                   key={index + 2}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
+                  onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
                     <Image
-                      src="https://ariobe.irisceramicagroup.com/wp-content/uploads/arioimg_repo/classic/pietre-naturali-high-tech/_pavimenti/jatoba-brown/texture/ar-pn-jatoba_brown_pn-_-_-120120-f07-plp120689.jpg"
+                      src={project.imageSrc}
                       alt={project.title}
                       width={400}
                       height={400}
@@ -114,7 +142,7 @@ export default function Projects() {
                     variants={textVariants}
                     className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -125,10 +153,11 @@ export default function Projects() {
                   key={index + 4}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
+                  onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
                     <Image
-                      src="https://ariobe.irisceramicagroup.com/wp-content/uploads/arioimg_repo/classic/pietre-naturali-high-tech/_pavimenti/jatoba-brown/texture/ar-pn-jatoba_brown_pn-_-_-120120-f07-plp120689.jpg"
+                      src={project.imageSrc}
                       alt={project.title}
                       width={400}
                       height={400}
@@ -139,7 +168,7 @@ export default function Projects() {
                     variants={textVariants}
                     className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -147,18 +176,13 @@ export default function Projects() {
           </div>
         </motion.div>
 
-
-
         <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 md:col-span-2 flex items-center justify-center mb-4"
-            variants={itemVariants}
-            style={{marginTop: '1rem'}}
-          >
-            {/* <motion.button variants={textVariants} className="text-black text-xl font-semibold"> */}
-            <LogoCarousel />
-
-            {/* </motion.button> */}
-          </motion.div>
+          className="bg-[#d7cfbb] rounded-lg p-6 md:col-span-2 flex items-center justify-center mb-4"
+          variants={itemVariants}
+          style={{ marginTop: '1rem' }}
+        >
+          <LogoCarousel />
+        </motion.div>
       </motion.div>
     </div>
   )

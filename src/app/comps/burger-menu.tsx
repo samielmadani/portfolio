@@ -41,7 +41,7 @@ export function BurgerMenu() {
                   className="block px-3 py-2 rounded hover:bg-stone-300 transition-colors text-black"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span>{item}</span>
+                  <span className='navbar2'>{item}</span>
                 </Link>
               </li>
             ))}

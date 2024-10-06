@@ -29,10 +29,10 @@ export function NavBar() {
             </Link>
             <nav className="hidden md:block">
                 <ul className="flex space-x-4 text-black">
-                    {['Home', 'Contact', 'About', 'Projects'].map((item) => (
+                    {['Home', 'Projects', 'About', 'Contact'].map((item) => (
                         <li key={item}>
-                            <Link href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} className="px-3 py-2 rounded hover:bg-stone-300 transition-colors">
-                                <span>{item}</span>
+                            <Link href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} className="px-3 py-2 rounded transition-colors">
+                                <p className='navbar'>{item}</p>
                             </Link>
                         </li>
                     ))}
