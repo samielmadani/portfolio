@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Music, Headphones, Mic2, School, Languages, MapPinCheck } from 'lucide-react'
+import { School, Languages, MapPinCheck } from 'lucide-react'
 import { BurgerMenu } from '../comps/burger-menu'
 import { NavBar } from '../comps/nav-bar'
 import profilePic from '../images/me.png'

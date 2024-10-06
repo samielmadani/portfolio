@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
@@ -13,7 +13,7 @@ import gitGif from './images/git.gif'
 
 
 export default function Home() {
-  const [expanded, setExpanded] = useState(true)
+  const [expanded] = useState(true)
 
   
 
