@@ -56,7 +56,7 @@ export default function Contact() {
           variants={itemVariants}
         >
           <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 text-black headerr">
-            Contact Us
+            Contact Me
           </motion.h2>
           <motion.form action="https://formspree.io/f/xjkvbrqq"
             method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
