@@ -1,13 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { BurgerMenu } from '../comps/burger-menu'
 import { NavBar } from '../comps/nav-bar'
 
 export default function Contact() {
-  const [expanded, setExpanded] = useState(true)
+  const [expanded] = useState(true)
 
   const containerVariants = {
     initial: { gap: '0px', gridTemplateColumns: '1fr' },
