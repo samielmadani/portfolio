@@ -10,12 +10,42 @@ import LogoCarousel from './comps/logo-carousel'
 import { NavBar } from './comps/nav-bar'
 
 import gitGif from './images/git.gif'
+import { useRouter } from 'next/navigation'
+
+import zonate from './images/z1.png';
+import ucmusa from './images/ucmusa.png';
+import monop from './images/m1.jpeg';
+import mos from './images/os1.jpeg';
 
 
 export default function Home() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  // Data for the items
+  const items = [
+    { name: 'Zonate', link: 'https://linkedin.com/in/samielmadani', image: zonate },
+    { name: 'Muslim Open Space', link: 'https://www.facebook.com/muslimopenspace/', image: mos },
+    { name: 'UCMUSA', link: 'https://www.canterburymusa.com/', image: ucmusa },
+    { name: 'University', link: 'https://github.com/samielmadani', image: monop },
+  ];
+
+  // Event handler for image click
+  const handleImageClick = (link: string) => {
+    window.open(link, '_blank'); // Open link in a new tab
+  };
+
+  const handleItemClick = (index: any) => {
+    setExpandedIndex(expandedIndex === index ? null : index); // Collapse if already expanded
+  };
+
   const [expanded] = useState(true)
 
-  
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/about'); // Replace with the target URL
+  };
+
 
   const containerVariants = {
     initial: { gap: '0px', gridTemplateColumns: '1fr' },
@@ -104,28 +134,28 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-400 rounded-lg p-6 flex items-center min-h-[300px]"
+            className="bg-[#565449] rounded-lg p-6 flex items-center min-h-[300px]"
             variants={itemVariants}
           >
             <div className="absolute inset-0 overflow-y-scroll scrollbar-hidden p-4"> {/* Added padding here */}
-              <motion.p variants={textVariants} className="text-black">
-                <strong className="text-2xl font-bold">Software Engineer</strong><br />
-                <span className="font-medium text-sm  font-bold">Motorcentral | Avanti Finance</span><br />
-                <span className=" text-sm font-bold">Since July 2024</span>
+              <motion.p variants={textVariants} className="lighttext">
+                <strong className="text-2xl font-bold lighttext">Software Engineer</strong><br />
+                <span className="font-medium text-sm  font-bold lighttext">Motorcentral | Avanti Finance</span><br />
+                <span className=" text-sm font-bold lighttext">Since July 2024</span>
                 <br /><br />
 
-                <strong className="text-xl font-bold">Software Engineer Intern</strong><br />
-                <span className="font-medium text-sm  font-bold">Datacom Limited</span><br />
-                <span className=" text-sm font-bold">Nov 2022 - Feb 2023</span><br />
-                <span className="text-sm text-gray-800">
+                <strong className="text-xl font-bold lighttext">Software Engineer Intern</strong><br />
+                <span className="font-medium text-sm  font-bold lighttext">Datacom Limited</span><br />
+                <span className=" text-sm font-bold lighttext">Nov 2022 - Feb 2023</span><br />
+                <span className="text-sm text-gray-800 lighttext">
                   Contributed to the Datacom Timpani team, collaborating on projects to enhance software solutions and improve user experiences.
                 </span>
                 <br /><br />
 
-                <strong className="text-xl font-bold">Software Engineer Intern</strong><br />
-                <span className="font-medium text-sm  font-bold">Zonate, Hablaz Limited</span><br />
-                <span className=" text-sm font-bold">Nov 2021 - Feb 2022</span><br />
-                <span className="text-gray-800 text-sm">
+                <strong className="text-xl font-bold lighttext">Software Engineer Intern</strong><br />
+                <span className="font-medium text-sm  font-bold lighttext">Zonate, Hablaz Limited</span><br />
+                <span className=" text-sm font-bold lighttext">Nov 2021 - Feb 2022</span><br />
+                <span className="text-gray-800 text-sm lighttext">
                   Worked with a dynamic start-up, helping to develop innovative applications that catered to client needs and market trends.
                 </span>
               </motion.p>
@@ -133,8 +163,11 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-700 rounded-lg overflow-hidden"
+            className="bg-[#565449]  rounded-lg overflow-hidden"
             variants={itemVariants}
+            whileHover={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
+            onClick={handleClick} // Redirect on click
+
           >
             <motion.div
               variants={imageVariants}
@@ -149,6 +182,7 @@ export default function Home() {
               />
             </motion.div>
           </motion.div>
+
 
 
           <motion.div
@@ -173,18 +207,39 @@ export default function Home() {
             </motion.div>
 
 
-            <motion.div variants={textVariants} className="space-y-4" >
-              {[
-                { name: 'Zonate', link: 'https://linkedin.com/in/samielmadani' },
-                { name: 'Muslim Open Space', link: 'https://www.facebook.com/muslimopenspace/' },
-                { name: 'UCMUSA', link: 'https://www.canterburymusa.com/' },
-                { name: 'University', link: 'https://github.com/samielmadani' },
-              ].map((item, index) => (
+            <motion.div variants={textVariants} className="space-y-4">
+              {items.map((item, index) => (
                 <div key={index}>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => handleItemClick(index)}
+                  >
                     <strong className="text-black titless">{item.name}</strong>
-                  </a>
+                  </div>
                   <motion.div className="h-px bg-black mt-1" variants={dividerVariants} />
+
+                  {/* Conditionally render the image for the expanded item with animations */}
+                  {expandedIndex === index && (
+                    <motion.div
+                      initial={{ maxHeight: 0, opacity: 0 }}  // Start with zero maxHeight and opacity
+                      animate={{ maxHeight: 500, opacity: 1 }} // Animate to maxHeight and full opacity
+                      exit={{ maxHeight: 0, opacity: 0 }} // Animate back to zero maxHeight and opacity
+                      transition={{ duration: 0.5, ease: 'easeInOut' }} // Duration of the opening animation
+                      className="mt-2 overflow-hidden" // Overflow hidden to prevent overflow during animation
+                    >
+                      <motion.div
+                      style={{borderRadius: 50}}
+                        whileHover={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-auto"
+                          onClick={() => handleImageClick(item.link)} // Handle image click
+                        />
+                      </motion.div>
+                    </motion.div>
+                  )}
                 </div>
               ))}
             </motion.div>
@@ -192,7 +247,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-600 rounded-lg p-6 md:col-span-2 flex items-center justify-center"
+            className="bg-[#565449]  rounded-lg p-6 md:col-span-2 flex items-center justify-center"
             variants={itemVariants}
           >
             {/* <motion.button variants={textVariants} className="text-black text-xl font-semibold"> */}
@@ -202,7 +257,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-500 rounded-lg p-6 flex items-center justify-center space-x-4"
+            className="bg-[#565449]  rounded-lg p-6 flex items-center justify-center space-x-4"
             variants={itemVariants}
           >
             {[
@@ -219,7 +274,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon size={24} />
+                <Icon size={24} color='#d7cfbb' />
               </motion.a>
             ))}
           </motion.div>

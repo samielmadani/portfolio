@@ -60,6 +60,11 @@ body {
 
 }
 
+.lighttext {
+  color: #d7cfbb; /* Remove the quotes */
+}
+
+
 .font-your-custom-font2
 {
   font-family: 'Roboto', sans-serif; /* Versatile sans-serif for span elements */
