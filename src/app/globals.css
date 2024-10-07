@@ -49,6 +49,10 @@ body {
   background: var(--background);
 }
 
+.bg-black {
+  background-color: #11120d !important;
+}
+
 .factss
 {
   font-family: 'Bebas', sans-serif; /* Use the font in your styles */

@@ -165,7 +165,7 @@ export default function Home() {
           <motion.div
             className="bg-[#565449]  rounded-lg overflow-hidden"
             variants={itemVariants}
-            whileHover={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
+            whileHover={{ scale: 1.1, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
             onClick={handleClick} // Redirect on click
 
           >
@@ -186,9 +186,10 @@ export default function Home() {
 
 
           <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex flex-col justify-between"
+            className="bg-[#d7cfbb] rounded-lg flex flex-col justify-between"
             variants={itemVariants}
           >
+            <div className='overflow-y-scroll scrollbar-hidden p-4' style={{maxHeight: '500px'}}>
 
             <motion.div variants={imageVariants} className="flex-grow relative mb-2">
               <div className="relative" style={{ minHeight: '200px' }}> {/* Set minHeight here */}
@@ -207,7 +208,7 @@ export default function Home() {
             </motion.div>
 
 
-            <motion.div variants={textVariants} className="space-y-4">
+            <motion.div variants={textVariants} className="space-y-4 ">
               {items.map((item, index) => (
                 <div key={index}>
                   <div
@@ -243,6 +244,8 @@ export default function Home() {
                 </div>
               ))}
             </motion.div>
+
+            </div>
 
           </motion.div>
 

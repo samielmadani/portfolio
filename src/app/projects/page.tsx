@@ -84,11 +84,12 @@ export default function Projects() {
           <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-6 text-black font-poppins headerr">
             My Projects
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
             <div className="space-y-6">
               {projects.slice(0, 2).map((project, index) => (
                 <motion.div
                   key={index}
+                  whileHover={{cursor: 'pointer', scale: 1.05}}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   onClick={handleProjectClick}
@@ -108,15 +109,17 @@ export default function Projects() {
                         alt={project.title}
                         width={400}
                         height={400}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover "
+                        
+                        
                       />
                     )}
                   </motion.div>
                   <motion.div
                     variants={textVariants}
-                    className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                    className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 "
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -127,6 +130,7 @@ export default function Projects() {
                   key={index + 2}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
+                  whileHover={{cursor: 'pointer', scale: 1.05}}
                   onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
@@ -142,7 +146,7 @@ export default function Projects() {
                     variants={textVariants}
                     className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -153,6 +157,7 @@ export default function Projects() {
                   key={index + 4}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
+                  whileHover={{cursor: 'pointer', scale: 1.05}}
                   onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
@@ -168,7 +173,7 @@ export default function Projects() {
                     variants={textVariants}
                     className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
