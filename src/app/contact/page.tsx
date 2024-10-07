@@ -50,34 +50,8 @@ export default function Contact() {
           <NavBar />
           <BurgerMenu />
         </motion.div>
-
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col mb-4"
-          variants={itemVariants}
-        >
-          <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 text-black headerr">
-            Contact Us
-          </motion.h2>
-          <motion.form action="https://formspree.io/f/xjkvbrqq"
-            method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
-            <div>
-              <label htmlFor="name" className="block mb-1 text-black font-your-custom-font">Name</label>
-              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg font-your-custom-font2" required />
-            </div>
-            <div>
-              <label htmlFor="email" className="block mb-1 text-black font-your-custom-font">Email</label>
-              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg font-your-custom-font2" required />
-            </div>
-            <div className="flex-grow">
-              <label htmlFor="message" className="block mb-1 text-black font-your-custom-font">Message</label>
-              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2" style={{ minHeight: '300px' }} required></textarea>
-            </div>
-            <button type="submit" className="bg-[#565449] text-white px-4 py-2 rounded-lg lighttext">Send Message</button>
-          </motion.form>
-        </motion.div>
-
-        <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4"
+            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4 mb-4"
             variants={itemVariants}
           >
             {[
@@ -98,6 +72,33 @@ export default function Contact() {
               </motion.a>
             ))}
           </motion.div>
+
+        <motion.div
+          className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col mb-4"
+          variants={itemVariants}
+        >
+          <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 text-black headerr">
+            Contact Me
+          </motion.h2>
+          <motion.form action="https://formspree.io/f/xjkvbrqq"
+            method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
+            <div>
+              <label htmlFor="name" className="block mb-1 text-black font-your-custom-font">Name</label>
+              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg font-your-custom-font2" required />
+            </div>
+            <div>
+              <label htmlFor="email" className="block mb-1 text-black font-your-custom-font">Email</label>
+              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg font-your-custom-font2" required />
+            </div>
+            <div className="flex-grow">
+              <label htmlFor="message" className="block mb-1 text-black font-your-custom-font">Message</label>
+              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2" style={{ minHeight: '200px' }} required></textarea>
+            </div>
+            <button type="submit" className="bg-stone-800 text-white px-4 py-2 rounded-lg ">Send Message</button>
+          </motion.form>
+        </motion.div>
+
+        
       </motion.div>
     </div>
   )

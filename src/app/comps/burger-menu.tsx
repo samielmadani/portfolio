@@ -34,7 +34,7 @@ export function BurgerMenu() {
       >
         <nav>
           <ul className="space-y-2">
-            {['Home', 'Contact', 'About', 'Projects'].map((item) => (
+            {['Home', 'Projects','About', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
                   href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`}
