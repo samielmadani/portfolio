@@ -19,7 +19,7 @@ import mos from './images/os1.jpeg';
 
 
 export default function Home() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   // Data for the items
   const items = [
@@ -34,7 +34,7 @@ export default function Home() {
     window.open(link, '_blank'); // Open link in a new tab
   };
 
-  const handleItemClick = (index: any) => {
+  const handleItemClick = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index); // Collapse if already expanded
   };
 
