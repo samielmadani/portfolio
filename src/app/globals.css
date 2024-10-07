@@ -118,8 +118,8 @@ p {
 }
 
 button {
-  font-family: 'Montserrat', sans-serif; /* Bold and modern sans-serif for buttons */
-  /* Add any additional styles for button here */
+  font-family: 'Bebas', sans-serif; /* Use the font in your styles */
+  font-size: 30px;
 }
 
 strong {
