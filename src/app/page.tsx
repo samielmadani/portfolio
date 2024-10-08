@@ -20,6 +20,7 @@ import mos from './images/os1.jpeg';
 
 export default function Home() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  
 
   // Data for the items
   const items = [
@@ -165,6 +166,7 @@ export default function Home() {
           <motion.div
             className="bg-[#565449]  rounded-lg overflow-hidden"
             variants={itemVariants}
+            whileTap={{ scale: 1.1, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
             whileHover={{ scale: 1.1, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
             onClick={handleClick} // Redirect on click
 
@@ -189,61 +191,65 @@ export default function Home() {
             className="bg-[#d7cfbb] rounded-lg flex flex-col justify-between"
             variants={itemVariants}
           >
-            <div className='overflow-y-scroll scrollbar-hidden p-4' style={{maxHeight: '500px'}}>
+            <div className='overflow-y-scroll scrollbar-hidden p-4' style={{ maxHeight: '500px' }}>
 
-            <motion.div variants={imageVariants} className="flex-grow relative mb-2">
-              <div className="relative" style={{ minHeight: '200px' }}> {/* Set minHeight here */}
-                <a href="https://github.com/samielmadani" target="_blank" rel="noopener noreferrer">
+              <motion.div variants={imageVariants} className="flex-grow relative mb-2">
+                <div className="relative" style={{ minHeight: '200px' }}> {/* Set minHeight here */}
+                  <a href="https://github.com/samielmadani" target="_blank" rel="noopener noreferrer">
 
-                  <Image
-                    src={gitGif}
-                    alt="First Dance"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded"
+                    <Image
+                      src={gitGif}
+                      alt="First Dance"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded"
 
-                  />
-                </a>
-              </div>
-            </motion.div>
-
-
-            <motion.div variants={textVariants} className="space-y-4 ">
-              {items.map((item, index) => (
-                <div key={index}>
-                  <div
-                    className="cursor-pointer"
-                    onClick={() => handleItemClick(index)}
-                  >
-                    <strong className="text-black titless">{item.name}</strong>
-                  </div>
-                  <motion.div className="h-px bg-black mt-1" variants={dividerVariants} />
-
-                  {/* Conditionally render the image for the expanded item with animations */}
-                  {expandedIndex === index && (
-                    <motion.div
-                      initial={{ maxHeight: 0, opacity: 0 }}  // Start with zero maxHeight and opacity
-                      animate={{ maxHeight: 500, opacity: 1 }} // Animate to maxHeight and full opacity
-                      exit={{ maxHeight: 0, opacity: 0 }} // Animate back to zero maxHeight and opacity
-                      transition={{ duration: 0.5, ease: 'easeInOut' }} // Duration of the opening animation
-                      className="mt-2 overflow-hidden" // Overflow hidden to prevent overflow during animation
-                    >
-                      <motion.div
-                      style={{borderRadius: 50}}
-                        whileHover={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
-                      >
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-auto"
-                          onClick={() => handleImageClick(item.link)} // Handle image click
-                        />
-                      </motion.div>
-                    </motion.div>
-                  )}
+                    />
+                  </a>
                 </div>
-              ))}
-            </motion.div>
+              </motion.div>
+
+
+              <motion.div variants={textVariants} className="space-y-4 ">
+                {items.map((item, index) => (
+                  <div key={index}>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => handleItemClick(index)}
+                    >
+                      <strong className="text-black titless hover:text-gray-700 transition-colors duration-300">
+                        {item.name} &nbsp;&nbsp;⮯
+                      </strong>
+
+                    </div>
+                    <motion.div className="h-px bg-black mt-1" variants={dividerVariants} />
+
+                    {/* Conditionally render the image for the expanded item with animations */}
+                    {expandedIndex === index && (
+                      <motion.div
+                        initial={{ maxHeight: 0, opacity: 0 }}  // Start with zero maxHeight and opacity
+                        animate={{ maxHeight: 500, opacity: 1 }} // Animate to maxHeight and full opacity
+                        exit={{ maxHeight: 0, opacity: 0 }} // Animate back to zero maxHeight and opacity
+                        transition={{ duration: 0.5, ease: 'easeInOut' }} // Duration of the opening animation
+                        className="mt-2 overflow-hidden" // Overflow hidden to prevent overflow during animation
+                      >
+                        <motion.div
+                          style={{ borderRadius: 50 }}
+                          whileTap={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
+                          whileHover={{ scale: 1.15, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
+                        >
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-auto"
+                            onClick={() => handleImageClick(item.link)} // Handle image click
+                          />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
 
             </div>
 
@@ -273,6 +279,7 @@ export default function Home() {
                 href={link}
                 className="text-black"
                 variants={symbolVariants}
+                whileTap={{ scale: 1.2 }}
                 whileHover={{ scale: 1.2 }}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -90,6 +90,7 @@ export default function Projects() {
                 <motion.div
                   key={index}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
+                  whileTap={{cursor: 'pointer', scale: 1.05}}
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   onClick={handleProjectClick}
@@ -131,6 +132,7 @@ export default function Projects() {
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
+                  whileTap={{cursor: 'pointer', scale: 1.05}}
                   onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">
@@ -158,6 +160,7 @@ export default function Projects() {
                   className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
+                  whileTap={{cursor: 'pointer', scale: 1.05}}
                   onClick={handleProjectClick}
                 >
                   <motion.div variants={imageVariants} className="h-full">

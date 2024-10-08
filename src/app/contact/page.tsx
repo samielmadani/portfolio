@@ -65,6 +65,7 @@ export default function Contact() {
                 className="text-black"
                 variants={symbolVariants}
                 whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1.2 }}
                 target="_blank"
                 rel="noopener noreferrer"
               >

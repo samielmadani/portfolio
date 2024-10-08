@@ -102,6 +102,15 @@ h1 {
   /* Add any additional styles for h1 here */
 }
 
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
 h2 {
   font-family: 'Lora', serif; /* Classic yet modern serif for subheadings */
   /* Add any additional styles for h2 here */
