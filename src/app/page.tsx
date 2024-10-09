@@ -218,7 +218,7 @@ export default function Home() {
                       onClick={() => handleItemClick(index)}
                     >
                       <strong className="text-black titless hover:text-gray-700 transition-colors duration-300">
-                        {item.name} &nbsp;&nbsp;⮯
+                        {item.name} ⇣
                       </strong>
 
                     </div>
