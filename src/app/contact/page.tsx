@@ -81,7 +81,7 @@ export default function Contact() {
           <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 text-black headerr">
             Contact Me
           </motion.h2>
-          <motion.form action="https://formspree.io/f/xjkvbrqq"
+          <motion.form action="https://formspree.io/f/xgvwbejl"
             method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
             <div>
               <label htmlFor="name" className="block mb-1 text-black font-your-custom-font">Name</label>
