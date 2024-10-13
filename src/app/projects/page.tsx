@@ -58,7 +58,7 @@ export default function Projects() {
   }
 
   return (
-    <div className="bg-black min-h-screen flex flex-col">
+    <div className="html-background min-h-screen flex flex-col">
       <motion.div
         className=" flex flex-col p-4 md:p-8"
         variants={containerVariants}
@@ -67,7 +67,7 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
+          className="background-primary rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
           style={{ height: '100px', zIndex: '999' }} // Fixed height for the header
         >
@@ -78,10 +78,10 @@ export default function Projects() {
         
 
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col"
+          className="background-primary rounded-lg p-6 flex-grow flex flex-col"
           variants={itemVariants}
         >
-          <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-6 text-black font-poppins headerr">
+          <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-6 primary-font font-poppins headerr">
             My Projects
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
@@ -91,7 +91,7 @@ export default function Projects() {
                   key={index}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}
-                  className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
+                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   onClick={handleProjectClick}
                 >
@@ -118,9 +118,9 @@ export default function Projects() {
                   </motion.div>
                   <motion.div
                     variants={textVariants}
-                    className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 "
+                    className="absolute bottom-0 left-0 right-0 html-background bg-opacity-50 text-white p-4 "
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects secondary-font">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -129,7 +129,7 @@ export default function Projects() {
               {projects.slice(2, 4).map((project, index) => (
                 <motion.div
                   key={index + 2}
-                  className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
+                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}
@@ -146,9 +146,9 @@ export default function Projects() {
                   </motion.div>
                   <motion.div
                     variants={textVariants}
-                    className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                    className="absolute bottom-0 left-0 right-0 html-background bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects secondary-font">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -157,7 +157,7 @@ export default function Projects() {
               {projects.slice(4, 6).map((project, index) => (
                 <motion.div
                   key={index + 4}
-                  className={`bg-stone-700 rounded-lg overflow-hidden ${project.height}`}
+                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}
@@ -174,9 +174,9 @@ export default function Projects() {
                   </motion.div>
                   <motion.div
                     variants={textVariants}
-                    className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                    className="absolute bottom-0 left-0 right-0 html-background bg-opacity-50 text-white p-4"
                   >
-                    <h3 className="text-lg font-semibold font-poppins projects lighttext">{project.title}</h3>
+                    <h3 className="text-lg font-semibold font-poppins projects secondary-font">{project.title}</h3>
                   </motion.div>
                 </motion.div>
               ))}
@@ -185,7 +185,7 @@ export default function Projects() {
         </motion.div>
 
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 md:col-span-2 flex items-center justify-center mb-4"
+          className="background-primary rounded-lg p-6 md:col-span-2 flex items-center justify-center mb-4"
           variants={itemVariants}
           style={{ marginTop: '1rem' }}
         >

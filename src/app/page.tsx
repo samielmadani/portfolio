@@ -83,7 +83,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-black min-h-screen flex flex-col">
+    <div className="html-background min-h-screen flex flex-col">
       <motion.div
         className="flex-grow flex flex-col p-4 md:p-8"
         variants={containerVariants}
@@ -92,7 +92,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
+          className="background-primary rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
           style={{ height: '100px', zIndex: '999' }}
         >
@@ -102,7 +102,7 @@ export default function Home() {
 
         <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-4">
           <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center"
+            className="background-primary rounded-lg p-6 flex items-center justify-center"
             variants={itemVariants}
           >
             <motion.div variants={symbolVariants} className="w-36 h-32"> {/* Adjusted width and height */}
@@ -121,12 +121,12 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 md:col-span-2 flex items-center"
+            className="background-primary rounded-lg p-6 md:col-span-2 flex items-center"
             variants={itemVariants}
           >
             <motion.h1
               variants={textVariants}
-              className="text-2xl font-semibold text-black leading-10 headerr" // Added leading utility for line height
+              className="text-2xl font-semibold primary-font leading-10 headerr" // Added leading utility for line height
               style={{ fontSize: '50px' }}
             >
               Sami Elmadani <br></br> Software Engineer
@@ -135,28 +135,28 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-[#565449] rounded-lg p-6 flex items-center min-h-[300px]"
+            className="background-secondary rounded-lg p-6 flex items-center min-h-[300px]"
             variants={itemVariants}
           >
             <div className="absolute inset-0 overflow-y-scroll scrollbar-hidden p-4"> {/* Added padding here */}
-              <motion.p variants={textVariants} className="lighttext">
-                <strong className="text-2xl font-bold lighttext">Software Engineer</strong><br />
-                <span className="font-medium text-sm  font-bold lighttext">Motorcentral | Avanti Finance</span><br />
-                <span className=" text-sm font-bold lighttext">Since July 2024</span>
+              <motion.p variants={textVariants} className="secondary-font">
+                <strong className="text-2xl font-bold secondary-font">Software Engineer</strong><br />
+                <span className="font-medium text-sm  font-bold secondary-font">Motorcentral | Avanti Finance</span><br />
+                <span className=" text-sm font-bold secondary-font">Since July 2024</span>
                 <br /><br />
 
-                <strong className="text-xl font-bold lighttext">Software Engineer Intern</strong><br />
-                <span className="font-medium text-sm  font-bold lighttext">Datacom Limited</span><br />
-                <span className=" text-sm font-bold lighttext">Nov 2022 - Feb 2023</span><br />
-                <span className="text-sm text-gray-800 lighttext">
+                <strong className="text-xl font-bold secondary-font">Software Engineer Intern</strong><br />
+                <span className="font-medium text-sm  font-bold secondary-font">Datacom Limited</span><br />
+                <span className=" text-sm font-bold secondary-font">Nov 2022 - Feb 2023</span><br />
+                <span className="text-sm text-gray-800 secondary-font">
                   Contributed to the Datacom Timpani team, collaborating on projects to enhance software solutions and improve user experiences.
                 </span>
                 <br /><br />
 
-                <strong className="text-xl font-bold lighttext">Software Engineer Intern</strong><br />
-                <span className="font-medium text-sm  font-bold lighttext">Zonate, Hablaz Limited</span><br />
-                <span className=" text-sm font-bold lighttext">Nov 2021 - Feb 2022</span><br />
-                <span className="text-gray-800 text-sm lighttext">
+                <strong className="text-xl font-bold secondary-font">Software Engineer Intern</strong><br />
+                <span className="font-medium text-sm  font-bold secondary-font">Zonate, Hablaz Limited</span><br />
+                <span className=" text-sm font-bold secondary-font">Nov 2021 - Feb 2022</span><br />
+                <span className="text-gray-800 text-sm secondary-font">
                   Worked with a dynamic start-up, helping to develop innovative applications that catered to client needs and market trends.
                 </span>
               </motion.p>
@@ -164,7 +164,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-[#565449]  rounded-lg overflow-hidden"
+            className="background-secondary  rounded-lg overflow-hidden"
             variants={itemVariants}
             whileTap={{ scale: 1.1, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
             whileHover={{ scale: 1.1, zIndex: 999, cursor: 'pointer' }} // Add this for hover effect
@@ -188,7 +188,7 @@ export default function Home() {
 
 
           <motion.div
-            className="bg-[#d7cfbb] rounded-lg flex flex-col justify-between"
+            className="background-primary rounded-lg flex flex-col justify-between"
             variants={itemVariants}
           >
             <div className='overflow-y-scroll scrollbar-hidden p-4' style={{ maxHeight: '500px' }}>
@@ -217,12 +217,12 @@ export default function Home() {
                       className="cursor-pointer"
                       onClick={() => handleItemClick(index)}
                     >
-                      <strong className="text-black titless hover:text-gray-700 transition-colors duration-300">
+                      <strong className="primary-font titless hover:text-gray-700 transition-colors duration-300">
                         {item.name} ⇣
                       </strong>
 
                     </div>
-                    <motion.div className="h-px bg-black mt-1" variants={dividerVariants} />
+                    <motion.div className="h-px html-background mt-1" variants={dividerVariants} />
 
                     {/* Conditionally render the image for the expanded item with animations */}
                     {expandedIndex === index && (
@@ -256,17 +256,17 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="bg-[#565449]  rounded-lg p-6 md:col-span-2 flex items-center justify-center"
+            className="background-secondary  rounded-lg p-6 md:col-span-2 flex items-center justify-center"
             variants={itemVariants}
           >
-            {/* <motion.button variants={textVariants} className="text-black text-xl font-semibold"> */}
+            {/* <motion.button variants={textVariants} className="primary-font text-xl font-semibold"> */}
             <LogoCarousel />
 
             {/* </motion.button> */}
           </motion.div>
 
           <motion.div
-            className="bg-[#565449]  rounded-lg p-6 flex items-center justify-center space-x-4"
+            className="background-secondary  rounded-lg p-6 flex items-center justify-center space-x-4"
             variants={itemVariants}
           >
             {[
@@ -277,7 +277,7 @@ export default function Home() {
               <motion.a
                 key={index}
                 href={link}
-                className="text-black"
+                className="primary-font"
                 variants={symbolVariants}
                 whileTap={{ scale: 1.2 }}
                 whileHover={{ scale: 1.2 }}

@@ -34,7 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="bg-black min-h-screen flex flex-col">
+    <div className="html-background min-h-screen flex flex-col">
       <motion.div
         className="flex-grow flex flex-col p-4 md:p-8"
         variants={containerVariants}
@@ -43,7 +43,7 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
+          className="background-primary rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
           style={{ height: '100px', zIndex: '999' }}
         >
@@ -51,7 +51,7 @@ export default function Contact() {
           <BurgerMenu />
         </motion.div>
         <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 flex items-center justify-center space-x-4 mb-4"
+            className="background-primary rounded-lg p-6 flex items-center justify-center space-x-4 mb-4"
             variants={itemVariants}
           >
             {[
@@ -62,7 +62,7 @@ export default function Contact() {
               <motion.a
                 key={index}
                 href={link}
-                className="text-black"
+                className="primary-font"
                 variants={symbolVariants}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 1.2 }}
@@ -75,27 +75,27 @@ export default function Contact() {
           </motion.div>
 
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex-grow flex flex-col mb-4"
+          className="background-primary rounded-lg p-6 flex-grow flex flex-col mb-4"
           variants={itemVariants}
         >
-          <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 text-black headerr">
+          <motion.h2 variants={textVariants} className="text-2xl font-semibold mb-4 primary-font headerr">
             Contact Me
           </motion.h2>
           <motion.form action="https://formspree.io/f/xgvwbejl"
             method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
             <div>
-              <label htmlFor="name" className="block mb-1 text-black font-your-custom-font">Name</label>
-              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg font-your-custom-font2" required />
+              <label htmlFor="name" className="block mb-1 primary-font font-your-custom-font">Name</label>
+              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg font-your-custom-font2 text-box" required />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-1 text-black font-your-custom-font">Email</label>
-              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg font-your-custom-font2" required />
+              <label htmlFor="email" className="block mb-1 primary-font font-your-custom-font">Email</label>
+              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg font-your-custom-font2 text-box" required />
             </div>
             <div className="flex-grow">
-              <label htmlFor="message" className="block mb-1 text-black font-your-custom-font">Message</label>
-              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2" style={{ minHeight: '200px' }} required></textarea>
+              <label htmlFor="message" className="block mb-1 primary-font font-your-custom-font">Message</label>
+              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2 text-box" style={{ minHeight: '200px' }} required></textarea>
             </div>
-            <button type="submit" className="bg-stone-800 text-white px-4 py-2 rounded-lg lighttext">(っ'-')╮=͟͟͞͞📨</button>
+            <button type="submit" className="background-tertiary text-white px-4 py-2 rounded-lg secondary-font">(っ'-')╮=͟͟͞͞📨</button>
           </motion.form>
         </motion.div>
 

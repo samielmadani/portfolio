@@ -2,10 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: rgb(215, 207, 187);
+  --secondary: rgb(86, 84, 73);
+  --tertiary: rgb(68, 64, 60);
+  --darkk: rgb(17 18 13);
 }
+
+
+html .html-background {
+  background-color: var(--darkk);
+}
+
+.background-primary {
+  background-color: var(--primary);
+}
+
+.background-secondary {
+  background-color: var(--secondary);
+}
+
+.background-tertiary {
+  background-color: var(--tertiary);
+}
+
+.primary-font {
+  color: var(--darkk);
+}
+
+.secondary-font {
+  color: var(--primary);
+}
+
+.text-box {
+  background-color: var(--primary-rgb); /* 0.8 is the transparency */
+  border-color: var(--darkk);
+  border-width: 1px;
+  color: var(--darkk);
+
+}
+
+
 
 @font-face {
   font-family: 'TypoGraphica';
@@ -49,9 +89,6 @@ body {
   background: var(--background);
 }
 
-.bg-black {
-  background-color: #11120d !important;
-}
 
 .factss
 {
@@ -64,17 +101,12 @@ body {
 
 }
 
-.lighttext {
-  color: #d7cfbb; /* Remove the quotes */
-}
 
 
 .font-your-custom-font2
 {
   font-family: 'Roboto', sans-serif; /* Versatile sans-serif for span elements */
   /* font-weight: lighter; */
-  color: #0a0a0a;
-  background-color: #ffffff78;
 }
 
 .headerr {
@@ -86,7 +118,6 @@ body {
 {
   font-family: 'Roboto', sans-serif; /* Versatile sans-serif for span elements */
   font-weight: bold;
-  color: #0a0a0a;
 }
 
 

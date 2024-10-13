@@ -36,7 +36,7 @@ export default function About() {
   }
 
   return (
-    <div className="bg-black min-h-screen flex flex-col font-roboto">
+    <div className="html-background min-h-screen flex flex-col font-roboto">
       <motion.div
         className="flex-grow flex flex-col p-4 md:p-8"
         variants={containerVariants}
@@ -45,7 +45,7 @@ export default function About() {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="bg-[#d7cfbb] rounded-lg p-6 flex justify-between items-center mb-4"
+          className="background-primary rounded-lg p-6 flex justify-between items-center mb-4"
           variants={itemVariants}
           style={{ height: '100px', zIndex: '999' }}
         >
@@ -56,50 +56,50 @@ export default function About() {
         <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-4">
           
           <motion.div
-            className="bg-[#d7cfbb] rounded-lg p-6 md:col-span-2 row-span-2"
+            className="background-primary rounded-lg p-6 md:col-span-2 row-span-2"
             variants={itemVariants}
           >
-            <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-4 text-black headerr">
+            <motion.h2 variants={textVariants} className="text-3xl font-semibold mb-4 primary-font headerr">
               About Me
             </motion.h2>
 
-            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 text-black about-head">
+            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 primary-font about-head">
               Background:
             </motion.h3>
-            <motion.ul variants={textVariants} className="mb-4 text-black list-disc list-inside about-bod">
+            <motion.ul variants={textVariants} className="mb-4 primary-font list-disc list-inside about-bod">
               <li>Software Engineering graduate from the University of Canterbury.</li>
               <li>Strong foundation in full-stack and mobile/web development.</li>
               <li>Passionate about innovation.</li>
             </motion.ul>
 
-            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 text-black about-head">
+            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 primary-font about-head">
               Current Role:
             </motion.h3>
-            <motion.ul variants={textVariants} className="mb-4 text-black list-disc list-inside about-bod">
+            <motion.ul variants={textVariants} className="mb-4 primary-font list-disc list-inside about-bod">
               <li>Software Developer at Motorcentral (part of Avanti Finance).</li>
               <li>Industry leading DMS software for the automotive industry.</li>
               <li>Working in C# .NET, Angular TS, SQL and more...</li>
             </motion.ul>
 
-            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 text-black about-head">
+            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 primary-font about-head">
               Personal Projects:
             </motion.h3>
-            <motion.ul variants={textVariants} className="mb-4 text-black list-disc list-inside about-bod">
+            <motion.ul variants={textVariants} className="mb-4 primary-font list-disc list-inside about-bod">
               <li>Created applications using React, JavaScript, TypeScript, C#, Flutter, Kotlin, and Jetpack Compose.</li>
               <li>Many projects serve the university and local community, including a website and mobile app for the University of Canterbury Muslim Students Association.</li>
             </motion.ul>
 
-            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 text-black about-head">
+            <motion.h3 variants={textVariants} className="text-2xl font-semibold mb-2 primary-font about-head">
               Community Involvement:
             </motion.h3>
-            <motion.ul variants={textVariants} className="mb-4 text-black list-disc list-inside about-bod">
+            <motion.ul variants={textVariants} className="mb-4 primary-font list-disc list-inside about-bod">
               <li>Event Coordinator for New Zealand Eid Day (Christchurch) since July 2021.</li>
               <li>Manage event volunteers, ticket registrations, food vendors, and coordinate large events with the Christchurch City Council.</li>
             </motion.ul>
           </motion.div>
 
           <motion.div
-            className="bg-stone-700 rounded-lg overflow-hidden md:row-span-2"
+            className="background-tertiary rounded-lg overflow-hidden md:row-span-2"
             variants={itemVariants}
           >
             <motion.div
@@ -117,7 +117,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-600 rounded-lg p-6 flex flex-col items-center justify-center"
+            className="background-secondary rounded-lg p-6 flex flex-col items-center justify-center secondary-font"
             variants={itemVariants}
           >
             <School size={48} className="mb-2" />
@@ -132,11 +132,11 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-500 rounded-lg p-6 flex flex-col items-center justify-center"
+            className="background-secondary rounded-lg p-6 flex flex-col items-center justify-center secondary-font"
             variants={itemVariants}
           >
             <MapPinCheck size={48} className="mb-2" />
-            <motion.h3 variants={textVariants} className="text-xl font-semibold mb-2 text-center factss">
+            <motion.h3 variants={textVariants} className="text-xl font-semibold mb-2 text-center factss ">
               FROM
             </motion.h3>
             <motion.p variants={textVariants} className="text-center factsss">
@@ -145,7 +145,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="bg-stone-400 rounded-lg p-6 flex flex-col items-center justify-center"
+            className="background-secondary rounded-lg p-6 flex flex-col items-center justify-center secondary-font"
             variants={itemVariants}
           >
             <Languages size={48} className="mb-2" />

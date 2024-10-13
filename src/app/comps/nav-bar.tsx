@@ -28,7 +28,7 @@ export function NavBar() {
                 />
             </Link>
             <nav className="hidden md:block">
-                <ul className="flex space-x-4 text-black">
+                <ul className="flex space-x-4 primary-font">
                     {['Home', 'Projects', 'About', 'Contact'].map((item) => (
                         <li key={item}>
                             <Link href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} className="px-3 py-2 rounded transition-colors">
