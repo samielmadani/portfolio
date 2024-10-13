@@ -95,7 +95,7 @@ export default function Contact() {
               <label htmlFor="message" className="block mb-1 primary-font font-your-custom-font">Message</label>
               <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2 text-box" style={{ minHeight: '200px' }} required></textarea>
             </div>
-            <button type="submit" className="background-tertiary text-white px-4 py-2 rounded-lg secondary-font">(っ'-')╮=͟͟͞͞📨</button>
+            <button type="submit" className="html-background text-white px-4 py-2 rounded-lg secondary-font">(っ'-')╮=͟͟͞͞📨</button>
           </motion.form>
         </motion.div>
 

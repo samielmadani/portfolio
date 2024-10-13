@@ -91,7 +91,7 @@ export default function Projects() {
                   key={index}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}
-                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
+                  className={`html-background rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   onClick={handleProjectClick}
                 >
@@ -129,7 +129,7 @@ export default function Projects() {
               {projects.slice(2, 4).map((project, index) => (
                 <motion.div
                   key={index + 2}
-                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
+                  className={`html-background rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}
@@ -157,7 +157,7 @@ export default function Projects() {
               {projects.slice(4, 6).map((project, index) => (
                 <motion.div
                   key={index + 4}
-                  className={`background-tertiary rounded-lg overflow-hidden ${project.height}`}
+                  className={`html-background rounded-lg overflow-hidden ${project.height}`}
                   variants={itemVariants}
                   whileHover={{cursor: 'pointer', scale: 1.05}}
                   whileTap={{cursor: 'pointer', scale: 1.05}}

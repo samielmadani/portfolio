@@ -99,7 +99,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="background-tertiary rounded-lg overflow-hidden md:row-span-2"
+            className="background-secondary rounded-lg overflow-hidden md:row-span-2"
             variants={itemVariants}
           >
             <motion.div

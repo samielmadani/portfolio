@@ -8,7 +8,6 @@
 :root {
   --primary: rgb(215, 207, 187);
   --secondary: rgb(86, 84, 73);
-  --tertiary: rgb(68, 64, 60);
   --darkk: rgb(17 18 13);
 }
 
@@ -25,9 +24,6 @@ html .html-background {
   background-color: var(--secondary);
 }
 
-.background-tertiary {
-  background-color: var(--tertiary);
-}
 
 .primary-font {
   color: var(--darkk);
