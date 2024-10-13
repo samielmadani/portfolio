@@ -63,7 +63,7 @@ export function NavBar() {
 
   return (
     <div className="flex justify-between w-full items-center z-50 relative p-4">
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-3">
         <Link href="/" className="flex items-center">
           <Image
             src={myLogo}
@@ -73,7 +73,7 @@ export function NavBar() {
             className={`rounded-full ${spin ? 'animate-spin' : ''}`}
           />
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-1">
           <ColorPicker
             label="Primary"
             color={primaryColor}
@@ -116,7 +116,7 @@ export function NavBar() {
 function ColorPicker({ label, color, onChange }: { label: string; color: string; onChange: (color: string) => void }) {
   return (
     <div className="flex flex-col items-center">
-      <strong className="text-black">{label}</strong>
+      <strong className="text-black" style={{fontSize: '14px'}}>{label}</strong>
       <input
         type="color"
         value={color}
