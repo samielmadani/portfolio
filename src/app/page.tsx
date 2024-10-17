@@ -20,7 +20,7 @@ import mos from './images/os1.jpeg';
 
 export default function Home() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  
+
 
   // Data for the items
   const items = [
@@ -204,7 +204,7 @@ export default function Home() {
                       objectFit="cover"
                       className="rounded"
 
-                    />
+                    />  
                   </a>
                 </div>
               </motion.div>
@@ -284,7 +284,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon size={24} color='#d7cfbb' />
+                <Icon size={24} className='secondary-font' />
               </motion.a>
             ))}
           </motion.div>

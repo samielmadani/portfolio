@@ -63,51 +63,52 @@ export function NavBar() {
 
   return (
     <div className="flex justify-between w-full items-center z-50 relative p-4">
-      <div className="flex items-center gap-3">
-        <Link href="/" className="flex items-center">
-          <Image
-            src={myLogo}
-            alt="Logo"
-            width={48}
-            height={48}
-            className={`rounded-full ${spin ? 'animate-spin' : ''}`}
-          />
-        </Link>
-        <div className="flex items-center space-x-1">
-          <ColorPicker
-            label="Primary"
-            color={primaryColor}
-            onChange={(color) => updateColor(color, setPrimaryColor, '--primary')}
-          />
-          <ColorPicker
-            label="Secondary"
-            color={secondaryColor}
-            onChange={(color) => updateColor(color, setSecondaryColor, '--secondary')}
-          />
-          <ColorPicker
-            label="Other"
-            color={darkColor} // Add dark color picker
-            onChange={(color) => updateColor(color, setDarkColor, '--darkk')}
-          />
-          <button
-            style={{color: '#000'}}
-            onClick={resetColors}
-            title="Reset to Default Colors"
-          >
-            <RefreshCw className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
+      <Link href="/" className="flex items-center">
+        <Image
+          src={myLogo}
+          alt="Logo"
+          width={48}
+          height={48}
+          className={`rounded-full ${spin ? 'animate-spin' : ''}`}
+        />
+      </Link>
       <nav className="hidden md:block">
-        <ul className="flex space-x-4 primary-font">
-          {['Home', 'Projects', 'About', 'Contact'].map((item) => (
-            <li key={item}>
-              <Link href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} className="px-3 py-2 rounded transition-colors">
-                <p className="navbar">{item}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-12">
+
+          <div className="flex items-center space-x-4">
+            <ColorPicker
+              label="Primary"
+              color={primaryColor}
+              onChange={(color) => updateColor(color, setPrimaryColor, '--primary')}
+            />
+            <ColorPicker
+              label="Secondary"
+              color={secondaryColor}
+              onChange={(color) => updateColor(color, setSecondaryColor, '--secondary')}
+            />
+            <ColorPicker
+              label="Other"
+              color={darkColor} // Add dark color picker
+              onChange={(color) => updateColor(color, setDarkColor, '--darkk')}
+            />
+            <button
+              style={{ color: '#000' }}
+              onClick={resetColors}
+              title="Reset to Default Colors"
+            >
+              <RefreshCw className="h-4 w-4" />
+            </button>
+          </div>
+          <ul className="flex space-x-4 primary-font">
+            {['Home', 'Projects', 'About', 'Contact'].map((item) => (
+              <li key={item}>
+                <Link href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} className="px-3 py-2 rounded transition-colors">
+                  <p className="navbar">{item}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </div>
   )
@@ -116,7 +117,7 @@ export function NavBar() {
 function ColorPicker({ label, color, onChange }: { label: string; color: string; onChange: (color: string) => void }) {
   return (
     <div className="flex flex-col items-center">
-      <strong className="text-black" style={{fontSize: '14px'}}>{label}</strong>
+      <strong className="text-black" style={{ fontSize: '14px' }}>{label}</strong>
       <input
         type="color"
         value={color}

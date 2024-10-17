@@ -85,15 +85,15 @@ export default function Contact() {
             method="POST" variants={textVariants} className="space-y-4 flex-grow flex flex-col">
             <div>
               <label htmlFor="name" className="block mb-1 primary-font font-your-custom-font">Name</label>
-              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg font-your-custom-font2 text-box" required />
+              <input type="text" id="name" name="name" className="w-full p-2 rounded-lg secondary-font html-background" required />
             </div>
             <div>
               <label htmlFor="email" className="block mb-1 primary-font font-your-custom-font">Email</label>
-              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg font-your-custom-font2 text-box" required />
+              <input type="email" id="email" name="email" className="w-full p-2 rounded-lg secondary-font html-background" required />
             </div>
             <div className="flex-grow">
               <label htmlFor="message" className="block mb-1 primary-font font-your-custom-font">Message</label>
-              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full font-your-custom-font2 text-box" style={{ minHeight: '200px' }} required></textarea>
+              <textarea id="message" name="message" className="w-full p-2 rounded-lg h-full secondary-font html-background" style={{ minHeight: '200px' }} required></textarea>
             </div>
             <button type="submit" className="html-background text-white px-4 py-2 rounded-lg secondary-font">(っ'-')╮=͟͟͞͞📨</button>
           </motion.form>
